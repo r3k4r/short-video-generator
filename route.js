@@ -3,8 +3,9 @@
 *routes that dont require authentication
 *@type {string}
 */
-export const PrivateRoutes = [
+export const publicRoutes = [
     "/auth/new-verification",
+    "/"
 ]
 
 /**
@@ -12,9 +13,12 @@ export const PrivateRoutes = [
  * @type {string}
  */
 export const AuthRoutes = [
-    "/auth/sign-in",
-    "/auth/sign-up",
+    "/auth/login",
+    "/auth/register",
     "/auth/error",
+    "/auth/reset",
+    "/auth/new-password",
+    "/auth/two-factor",
 ]
 
 /**
