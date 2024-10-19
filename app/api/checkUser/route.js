@@ -3,6 +3,7 @@ import { prisma } from "@/lib/db";
 export async function POST(req) {
   const { email, name, imageURL } = await req.json();
 
+    
   try {
     const user = await prisma.user.findUnique({
       where: { email },

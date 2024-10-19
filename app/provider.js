@@ -5,7 +5,6 @@ import { useEffect } from "react";
 
 export default function Provider({ children }) {
   const { user } = useUser();
-  console.log('User:', user);
   
 
   useEffect(() => {
