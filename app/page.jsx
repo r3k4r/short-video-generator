@@ -1,19 +1,32 @@
 'use client';
 
-import { signOut } from 'next-auth/react'
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { signOut, useSession } from 'next-auth/react'
 import Link from "next/link";
 
 
 
-export default function Home(){
 
-  
+
+export default function Home(){
+  const { data: session } = useSession();
+
   return (
     <>
       Home
-    <button onClick={signOut}>sig out</button>
+      <br />
+      {
+        session ? 
+        <>
+        <button onClick={signOut}>sig out</button>
+        <br />
+        <Link href="/dashboard">dashboard</Link>
+        </>
+        :
+        <>
+        <Link href="/auth/signin">
+          sign in </Link>
+          </>
+      }
     </>
   )
 }

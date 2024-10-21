@@ -1,5 +1,7 @@
+import Provider from "@/components/Provider";
 import "./globals.css";
 import { Outfit } from 'next/font/google'
+import { ThemeProvider } from "@/ThemeProvider";
 
 
 export const metadata = {
@@ -12,9 +14,13 @@ const outfit =  Outfit({subsets: ['latin']})
 export default function RootLayout({ children }) {
   return (
       <html lang="en">
-        <body className={`${outfit.className}`}>
-            {children}
-        </body>
+        <Provider>
+          <ThemeProvider>
+            <body className={`${outfit.className}`}>
+                {children}
+            </body>
+          </ThemeProvider>
+        </Provider>
       </html>
   );
 }

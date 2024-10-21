@@ -21,7 +21,7 @@ const Layout = ({children}) => {
           </div>
 
           {/* RIGHT */}
-          <div className="w-full">
+          <div className="w-full p-4">
             {children}
           </div>
 
