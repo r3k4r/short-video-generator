@@ -254,9 +254,6 @@ html {
     @apply sm:pb-24 pb-12;
   }
 
-  .blue_btn{
-    @apply bg-ten hover:bg-blue-800 text-white font-bold py-2 px-4 rounded;
-  }
 }
 
 

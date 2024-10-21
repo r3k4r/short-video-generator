@@ -1,9 +1,9 @@
 
 
-const Page = () => {
+const Dashboard = () => {
   return (
-    <div className=''>Dashboard Page</div>
-  )
+    <div className='p-3'>chseiu hefui</div>
+  ) 
 }
 
-export default Page
+export default Dashboard

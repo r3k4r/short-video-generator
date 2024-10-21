@@ -79,7 +79,7 @@ useEffect(() => {
         </div>
       )}
 
-        <button aria-disabled={pending} type="submit" className="bg-primary-orange hover:bg-orange-600 text-white p-2 rounded-md font-bold">Sign Up</button>
+        <button aria-disabled={pending} type="submit" className="bg-primary text-white p-2 rounded-md font-bold">Sign Up</button>
 
         {/* <div className="flex space-y-1 items-right justify-end text-[15px]">
             <p>Forgot password?</p>

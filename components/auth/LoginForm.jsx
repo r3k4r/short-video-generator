@@ -88,7 +88,7 @@ const LoginForm = () => {
         </div>
       )}
 
-        <button type="submit" aria-disabled={pending} className="bg-primary-orange hover:bg-orange-600 text-white p-2 rounded-md font-bold">Login</button>
+        <button type="submit" aria-disabled={pending} className="bg-primary text-white p-2 rounded-md font-bold">Login</button>
 
         <div className="flex space-y-1 items-right justify-end text-[15px]">
             <p>Forgot password?</p>

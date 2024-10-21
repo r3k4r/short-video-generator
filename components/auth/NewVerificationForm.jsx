@@ -4,8 +4,8 @@ import Link from "next/link"
 import { SyncLoader } from "react-spinners"
 import { useSearchParams } from "next/navigation"
 import { useCallback, useEffect, useState } from "react"
-import { newVerification } from '@/app/lib/actions/new-verification';
-import { getMessageFromCode } from "@/app/lib/errors"
+import { newVerification } from "@/lib/actions/new-verification"
+import { getMessageFromCode } from "@/lib/errors"
 
 export default function NewVerificationForm(){
     const [error, setError] = useState('')
