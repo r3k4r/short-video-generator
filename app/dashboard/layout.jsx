@@ -5,7 +5,7 @@ import SideNav from "@/components/SideNav"
 
 const Layout = ({children}) => {
   return (
-    <div className=''>
+    <div className='w-full h-full'>
 
       {/* HEADER */}
       <div className='z-10'>
@@ -13,7 +13,7 @@ const Layout = ({children}) => {
       </div>
 
       {/* BODY */}
-      <div className='w-full h-screen flex '>
+      <div className='w-full h-full flex '>
 
         {/* LEFT */}
         <div className="hidden md:block w-56">
