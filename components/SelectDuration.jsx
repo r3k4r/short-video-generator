@@ -9,7 +9,7 @@ import {
 
 
 const SelectDuration = ({onUserSelect}) => {
-  const options = ["30 sec", "60 sec"]
+  const options = ["30 seconds", "60 seconds"]
 
   
   return (

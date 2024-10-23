@@ -1,24 +1,46 @@
 'use client'
 
+import CustomLoading from "@/components/CustomLoading"
 import SelectDuration from "@/components/SelectDuration"
 import SelectTopic from "@/components/SelectTopic"
 import SelectTStyle from "@/components/SelectTStyle"
 import { Button } from "@/components/ui/button"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+
 
 
 
 const CreateNew = () => {
 
-  const [formData, setFormData] = useState([
-    {
-      style: '',
-      topic: '',
-      duration: ''
-    }
-  ])
+  const [formData, setFormData] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [videoScript, setVideoScript] = useState([])
+  
 
-  console.log(formData);
+  async function generateScript(){
+    setLoading(true)
+    try{
+      const response = await fetch('/api/getVideoScript', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          prompt: `write a script to generate ${formData.duration} video on topic: ${formData.topic} along with AI image prompt in ${formData.style} format for each scene and give me result in JSON format with imagePrompt and ContentText as field, No Plain text.`
+        })
+      })
+      const data = await response.json()
+      setVideoScript(data.result)
+      
+
+      setLoading(false)
+
+    }catch(err){
+      console.log("error sending prompt to server:"+ err)
+    }
+  }
+
+
   
   
 
@@ -51,8 +73,12 @@ const CreateNew = () => {
 
         {/* CREATE BUTTON */}
         <div className='mt-5'>
-          <Button>Create</Button>
+          <Button onClick={generateScript}>Create</Button>
         </div>
+
+
+        {/* LOADING */}
+        <CustomLoading loading={loading}/>
                     
         </div>
   )
